@@ -1,0 +1,364 @@
+/* =========================
+   GOOGLE FONT
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #e6e7ee;
+}
+
+/* =========================
+   JOIN PAGE
+========================= */
+
+.join-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dfe1ec,
+      #f3f4f9
+    );
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.join-container {
+  width: 100%;
+  max-width: 1200px;
+
+  display: flex;
+
+  overflow: hidden;
+
+  border-radius: 35px;
+
+  background: #e6e7ee;
+
+  box-shadow:
+    12px 12px 24px #c8c9d0,
+    -12px -12px 24px #ffffff;
+}
+
+/* =========================
+   LEFT SECTION
+========================= */
+
+.join-left {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #5b7cfa,
+      #4361ee
+    );
+
+  color: white;
+}
+
+.join-branding {
+  max-width: 450px;
+}
+
+.join-title {
+  font-size: 58px;
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+}
+
+.join-subtitle {
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  opacity: 0.9;
+}
+
+/* =========================
+   RIGHT SECTION
+========================= */
+
+.join-right {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.join-card {
+  width: 100%;
+  max-width: 430px;
+
+  padding: 45px;
+
+  border-radius: 30px;
+
+  background: #e6e7ee;
+
+  box-shadow:
+    10px 10px 20px #c8c9d0,
+    -10px -10px 20px #ffffff;
+}
+
+/* =========================
+   FORM TITLE
+========================= */
+
+.form-title {
+  font-size: 34px;
+  font-weight: 700;
+
+  color: #2c2f48;
+
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  color: #7d8093;
+
+  font-size: 15px;
+
+  margin-bottom: 35px;
+}
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #4a4d61;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.form-input {
+  width: 100%;
+
+  padding: 18px 22px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 18px;
+
+  background: #e6e7ee;
+
+  color: #2c2f48;
+
+  font-size: 15px;
+
+  box-shadow:
+    inset 6px 6px 12px #c8c9d0,
+    inset -6px -6px 12px #ffffff;
+
+  transition: 0.3s;
+}
+
+.form-input:focus {
+  box-shadow:
+    inset 3px 3px 8px #c8c9d0,
+    inset -3px -3px 8px #ffffff;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.join-submit-btn {
+  width: 100%;
+
+  padding: 18px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #5b7cfa,
+      #4361ee
+    );
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  box-shadow:
+    6px 6px 12px rgba(67,97,238,0.3),
+    -6px -6px 12px rgba(255,255,255,0.5);
+}
+
+.join-submit-btn:hover {
+  transform: translateY(-2px);
+}
+
+.join-submit-btn:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   POPULAR ROOMS
+========================= */
+
+.popular-rooms {
+  margin-top: 35px;
+}
+
+.popular-title {
+  color: #6b6f83;
+
+  margin-bottom: 15px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.popular-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+/* =========================
+   ROOM BUTTONS
+========================= */
+
+.room-pill {
+  border: none;
+  outline: none;
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  background: #e6e7ee;
+
+  color: #4a4d61;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  box-shadow:
+    5px 5px 10px #c8c9d0,
+    -5px -5px 10px #ffffff;
+}
+
+.room-pill:hover {
+  transform: translateY(-2px);
+
+  color: #4361ee;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 992px) {
+
+  .join-container {
+    flex-direction: column;
+  }
+
+  .join-left {
+    padding: 50px 30px;
+  }
+
+  .join-title {
+    font-size: 42px;
+  }
+
+  .join-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .join-page {
+    padding: 15px;
+  }
+
+  .join-card {
+    padding: 30px 22px;
+  }
+
+  .join-title {
+    font-size: 34px;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+
+  .form-input {
+    padding: 15px 18px;
+  }
+
+  .join-submit-btn {
+    padding: 15px;
+  }
+}
