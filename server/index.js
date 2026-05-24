@@ -4,7 +4,12 @@ const { Server } = require("socket.io");
 const cors = require("cors");
 
 const app = express();
+
 app.use(cors());
+
+app.get("/", (req, res) => {
+  res.send("Server running");
+});
 
 const server = http.createServer(app);
 
@@ -25,10 +30,9 @@ io.on("connection", (socket) => {
   socket.on("send_message", (data) => {
     console.log("Message:", data);
 
-    // send to ALL in room (including sender alternative handled in frontend)
     socket.to(data.room).emit("receive_message", data);
   });
-}); 
+});
 
 const PORT = process.env.PORT || 3001;
 
