@@ -39,10 +39,6 @@ function Join({ setRoom, goChat }) {
               Join Room
             </h2>
 
-            <p className="form-subtitle">
-              Enter room name
-            </p>
-
             <div className="form-group">
 
               <label className="form-label">
