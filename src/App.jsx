@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Join from "./pages/Join";
 import Chat from "./pages/Chat";
 
@@ -46,6 +46,8 @@ function App() {
   }
 
   return <Chat user={user} room={room} />;
+
 }
+
 
 export default App;

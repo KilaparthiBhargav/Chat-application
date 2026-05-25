@@ -4,7 +4,8 @@ import "./join.css";
 import "./login.css";
 
 function Login({ setUser, goNext }) {
-  const handleLogin = async () => {
+ const handleLogin = async () => {
+  try {
     const result = await signInWithPopup(auth, provider);
     const u = result.user;
 
@@ -15,8 +16,11 @@ function Login({ setUser, goNext }) {
       uid: u.uid,
     });
 
-    goNext("join");
-  };
+    goNext?.("join"); // safer
+  } catch (err) {
+    console.error("Google login failed:", err);
+  }
+}
 
   return (
     <div className="join-page login-bg">
