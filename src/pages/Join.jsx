@@ -56,6 +56,7 @@ function Join({ setRoom, goChat }) {
                 onChange={(e) =>
                   setRoomName(e.target.value)
                 }
+                placeholder="Enter custom room"
               />
 
             </div>
