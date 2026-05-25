@@ -1,19 +1,17 @@
 import { useState } from "react";
 import "./join.css";
 
-function Join({ setUser, setRoom, setJoined }) {
-  const [name, setName] = useState("");
+function Join({ setRoom, goChat }) {
   const [roomName, setRoomName] = useState("");
 
   const handleJoin = () => {
-    if (!name.trim() || !roomName.trim()) {
-      alert("Please fill all fields");
+    if (!roomName.trim()) {
+      alert("Enter room name");
       return;
     }
 
-    setUser(name);
     setRoom(roomName);
-    setJoined(true);
+    goChat("chat");
   };
 
   return (
@@ -21,25 +19,18 @@ function Join({ setUser, setRoom, setJoined }) {
 
       <div className="join-container">
 
-        {/* Left Side */}
         <div className="join-left">
-
           <div className="join-branding">
-
             <h1 className="join-title">
-              Realtime Chat
+              Choose Room
             </h1>
 
             <p className="join-subtitle">
-              Connect instantly with rooms,
-              friends and realtime messaging.
+              Join or create a chat room
             </p>
-
           </div>
-
         </div>
 
-        {/* Right Side */}
         <div className="join-right">
 
           <div className="join-card">
@@ -49,26 +40,8 @@ function Join({ setUser, setRoom, setJoined }) {
             </h2>
 
             <p className="form-subtitle">
-              Enter details to continue
+              Enter room name
             </p>
-
-            <div className="form-group">
-
-              <label className="form-label">
-                Username
-              </label>
-
-              <input
-                type="text"
-                placeholder="Enter username"
-                value={name}
-                onChange={(e) =>
-                  setName(e.target.value)
-                }
-                className="form-input"
-              />
-
-            </div>
 
             <div className="form-group">
 
@@ -78,17 +51,17 @@ function Join({ setUser, setRoom, setJoined }) {
 
               <input
                 type="text"
-                placeholder="Enter room name"
+                className="form-input"
                 value={roomName}
                 onChange={(e) =>
                   setRoomName(e.target.value)
                 }
-                className="form-input"
               />
 
             </div>
 
             <button
+              type="button"
               className="join-submit-btn"
               onClick={handleJoin}
             >
@@ -103,22 +76,20 @@ function Join({ setUser, setRoom, setJoined }) {
 
               <div className="popular-list">
 
-                {[
-                  "global",
-                  "gaming",
-                  "coding",
-                  "music",
-                ].map((room) => (
-                  <button
-                    key={room}
-                    className="room-pill"
-                    onClick={() =>
-                      setRoomName(room)
-                    }
-                  >
-                    {room}
-                  </button>
-                ))}
+                {["global", "gaming", "coding", "music"].map(
+                  (room) => (
+                    <button
+                      type="button"
+                      key={room}
+                      className="room-pill"
+                      onClick={() =>
+                        setRoomName(room)
+                      }
+                    >
+                      {room}
+                    </button>
+                  )
+                )}
 
               </div>
 

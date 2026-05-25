@@ -10,7 +10,8 @@ function Chat({ user, room }) {
 
   // Load messages
   useEffect(() => {
-    const saved = JSON.parse(localStorage.getItem(room)) || [];
+    const saved =
+      JSON.parse(localStorage.getItem(room)) || [];
     setMessages(saved);
   }, [room]);
 
@@ -37,7 +38,9 @@ function Chat({ user, room }) {
 
   // Auto scroll
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    bottomRef.current?.scrollIntoView({
+      behavior: "smooth",
+    });
   }, [messages]);
 
   // Send message
@@ -46,7 +49,8 @@ function Chat({ user, room }) {
 
     const msgData = {
       room,
-      author: user,
+      author: user?.name,   // FIX HERE
+      photo: user?.photo,
       message,
       time: new Date().toLocaleTimeString([], {
         hour: "2-digit",
@@ -69,11 +73,12 @@ function Chat({ user, room }) {
 
       {/* Sidebar */}
       <div className="chat-sidebar">
-        <h2 className="logo">Chat App</h2>
+        <a href="/"> 
+        <h2 className="logo" >Chat App</h2></a>
 
         <div className="info-box">
           <p>User</p>
-          <h3>{user}</h3>
+          <h3>{user?.name}</h3> {/* FIX */}
         </div>
 
         <div className="info-box">
@@ -88,24 +93,29 @@ function Chat({ user, room }) {
         {/* Header */}
         <div className="chat-header">
           <h2>#{room}</h2>
-          <span>{user}</span>
+          <span>{user?.name}</span> {/* FIX */}
         </div>
 
         {/* Messages */}
         <div className="chat-body">
 
           {messages.map((msg, i) => {
-            const isOwn = msg.author === user;
+            const isOwn =
+              msg.author === user?.name; // FIX
 
             return (
               <div
                 key={i}
-                className={`msg-row ${isOwn ? "own" : ""}`}
+                className={`msg-row ${
+                  isOwn ? "own" : ""
+                }`}
               >
                 <div className="msg-box">
 
                   <div className="msg-top">
-                    <strong>{msg.author}</strong>
+                    <strong>
+                      {msg.author}
+                    </strong>
                     <small>{msg.time}</small>
                   </div>
 
@@ -121,11 +131,15 @@ function Chat({ user, room }) {
 
         {/* Input */}
         <div className="chat-footer">
+
           <input
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            onChange={(e) =>
+              setMessage(e.target.value)
+            }
             onKeyDown={(e) =>
-              e.key === "Enter" && sendMessage()
+              e.key === "Enter" &&
+              sendMessage()
             }
             placeholder="Type message..."
           />
@@ -133,6 +147,7 @@ function Chat({ user, room }) {
           <button onClick={sendMessage}>
             Send
           </button>
+
         </div>
 
       </div>

@@ -1,0 +1,48 @@
+/* BACKGROUND
+.login-bg {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+} */
+
+/* LOGIN CARD ENHANCEMENT */
+.login-card {
+  text-align: center;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* ICON */
+.login-avatar {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.login-btn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* FEATURES */
+.login-features {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+/* FOOTER TEXT */
+.login-footer-text {
+  margin-top: 15px;
+  font-size: 12px;
+  color: #94a3b8;
+}

@@ -172,6 +172,7 @@ body {
   box-shadow:
     inset 5px 5px 10px #c8c9d0,
     inset -5px -5px 10px #ffffff;
+    color: #000000;
 }
 
 .chat-footer button {
